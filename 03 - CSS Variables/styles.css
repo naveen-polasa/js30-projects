@@ -1,0 +1,36 @@
+:root {
+  --color: rgb(221, 112, 112);
+  --padding: 1rem;
+  --filter: 0.1rem;
+}
+
+img {
+  background-color: var(--color);
+  padding: var(--padding);
+  filter: blur(var(--filter));
+}
+
+.hl {
+  color: var(--color);
+}
+
+/*
+      misc styles, nothing to do with CSS variables
+    */
+
+body {
+  text-align: center;
+  background: #193549;
+  color: white;
+  font-family: "helvetica neue", sans-serif;
+  font-weight: 100;
+  font-size: 44px;
+}
+
+.controls {
+  margin-bottom: 50px;
+}
+
+input {
+  width: 100px;
+}
