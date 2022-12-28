@@ -14,9 +14,7 @@ img {
   color: var(--color);
 }
 
-/*
-      misc styles, nothing to do with CSS variables
-    */
+/* misc styles, nothing to do with CSS variables */
 
 body {
   text-align: center;
