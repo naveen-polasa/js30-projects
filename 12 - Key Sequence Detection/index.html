@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+</head>
+
+<body>
+  <h2></h2>
+  <script>
+    const h2 = document.querySelector('h2')
+    const pressed = []
+    const secretCode = 'naveen';
+
+    window.addEventListener('keyup', (e) => {
+      // console.log(e.key)
+      pressed.push(e.key)
+      pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length)
+      if (pressed.join('').includes(secretCode)) {
+        h2.innerHTML = 'Yayy...'
+      }
+    })
+  </script>
+</body>
+
+</html>
