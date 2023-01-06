@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+</head>
+
+<body>
+
+  <script>
+    // start with strings, numbers and booleans
+
+    let age = 23
+    let age1 = age
+    console.log(age, age1)
+    age = 24
+    console.log(age, age1)
+
+    // Let's say we have an array
+    const arr = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const arr1 = arr
+    arr1[2] = 'hey'
+    console.log(arr, arr1)
+
+    const arr2 = arr.slice()
+
+    arr2[1] = 'one'
+    console.log(arr)
+    console.log(arr2)
+
+    const arr3 = [].concat(arr)
+    arr3[3] = 'four'
+    console.log(arr)
+    console.log(arr3)
+
+    const arr4 = [...arr]
+    arr4[0] = 'spread'
+    console.log(arr)
+    console.log(arr4)
+
+    const arr5 = Array.from(arr)
+    arr5[3] = 'from'
+    console.log(arr)
+    console.log(arr5)
+
+
+    //  create a new array and concat the old one in
+
+    //  use the new ES6 Spread
+
+    // now when we update it, the original one isn't changed
+
+    // The same thing goes for objects, let's say we have a person object
+    console.clear()
+    // with Objects
+    const obj = {
+      name: 'Wes Bos',
+      age: 80
+    };
+
+    // const obj1 = obj
+    // obj1.number = 23
+    // console.log(obj)
+    // console.log(obj1)
+
+
+    // We will hopefully soon see the object ...spread
+    // const obj2 = [...obj]
+
+
+    // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+    const obj3 = Object.assign({}, obj, { number: 24 })
+    console.log(obj)
+    console.log(obj3)
+
+    const obj4 = {
+      name: 'Wes Bos',
+      age: 80,
+      subs: {
+        number: 35,
+        study: 'graduate'
+      }
+    };
+    console.clear()
+    const obj5 = Object.assign({}, obj4)
+    obj5.subs.number = 384
+    console.log(obj4)
+    console.log(obj5)
+
+    const obj6 = JSON.parse(JSON.stringify(obj4))
+    obj6.subs.number = 968
+    console.log(obj4)
+    console.log(obj6)
+  </script>
+
+</body>
+
+</html>
